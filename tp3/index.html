@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SGI - Parser Example</title>
+    <link rel="icon" href="data:,">
+
+<style>
+body, html {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top:0 ;
+    width: 100%;
+    height: 100%;
+}
+
+#buttons{
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.buttonStyling{
+    background-image: url("assets/button_background.png");
+    background-size: 100% 100%;
+    font-family: montserrat;
+    font-weight: 600;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#timerDiv{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 5vh;
+}
+
+#startButtonDiv{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 30vh;
+    text-align: center;
+}
+
+#rulesButtonDiv{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 3vh;
+    text-align: center;
+}
+
+#chooseAmbient{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 10vh;
+    text-align: center;
+}
+
+#startButton{
+    font-size: 50px;
+    padding: 20px 40px 20px 40px;
+}
+
+#rulesButton{
+    font-size: 50px;
+    padding: 20px 40px 20px 40px;
+}
+
+#ambientButton1{
+    font-size: 20px;
+    padding: 20px 40px 20px 40px;
+}
+#ambientButton2{
+    font-size: 20px;
+    padding: 20px 40px 20px 40px;
+}
+#ambientButton3{
+    font-size: 20px;
+    padding: 20px 40px 20px 40px;
+}
+
+#warningMessage{
+    position: absolute;
+    z-index:2;
+    top:10vh;
+    width: 100%;
+    text-align: center;
+    font-family: montserrat;
+    color:red;
+    font-size: 1.5vw;
+}
+
+#finalMessage{
+    position: absolute;
+    z-index:2;
+    top:35vh;
+    width: 100%;
+    text-align: center;
+    font-family: montserrat;
+    color:forestgreen;
+    font-size: 3vw;
+}
+
+#finalButtonsDiv{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#cameraSliderDiv{
+    width: 50%;
+    font-family: montserrat;
+    color: white;
+    padding-left: 0.5vw;
+    margin-top: 2vh;
+}
+
+#cameraAngleSlider{
+    background-color: red;
+    vertical-align: middle;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="buttons" hidden>
+        <button id="undoButton" class="buttonStyling">Undo play</button>
+        <div id="cameraSliderDiv">
+            Camera:
+            <input type="range" min="0" max="6.2832" step = "0.05" value="180" class="slider" id="cameraAngleSlider">
+        </div>
+    </div>
+
+    <div id="timerDiv" hidden>
+        <button id="timer" class="buttonStyling"></button>
+    </div>
+
+    <div id = "startButtonDiv">
+        <button id="startButton" class="buttonStyling">Play</button>
+    </div>
+    <div id="rulesButtonDiv">
+        <a href="https://www.ultraboardgames.com/checkers/game-rules.php" target = "_blank"><button id="rulesButton" class="buttonStyling">Rules</button></a>
+    </div>
+
+    <div id = "chooseAmbient">
+        <button id="ambientButton1" class="buttonStyling">Wood</button>
+        <button id="ambientButton2" class="buttonStyling">City</button>
+        <button id="ambientButton3" class="buttonStyling">Mars</button>
+    </div>
+
+    <div id="warningMessage" hidden>
+        WARNING MESSAGE PLACEHOLDER
+    </div>
+
+    <div id="finalMessage" hidden>
+        Playe 1 won the game!
+    </div>
+    <div id="finalButtonsDiv" hidden>
+        <button id="restartButton" class="buttonStyling">Restart</button>
+        <button id="reWatchButton" class="buttonStyling">Watch game</button>
+    </div>
+
+
+    <script type="module" src="main.js"></script>
+    
+
+</body>
+</html>
